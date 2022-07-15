@@ -1,6 +1,6 @@
 import fs from "fs";
 
-// http://localhost:3000/api/getblog?slug=how-to-learn-nextjs,
+// http://localhost:3000/api/getblog?slug=how-to-learn-nextjs
 
 export default function handler(req, res) {
   fs.readFile(`./blogdata/${req.query.slug}.json`, "utf8", (err, data) => {
