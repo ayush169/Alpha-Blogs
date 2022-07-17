@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
+import fs from "fs";
 import styles from "../styles/Blog.module.css";
 import Link from "next/link";
 import Axios from "axios";
 
 const Blog = (props) => {
-  console.log(props);
   const [blogs, setBlogs] = useState(props.allBlogs);
 
   // useEffect(() => {
@@ -40,9 +40,15 @@ const Blog = (props) => {
   );
 };
 
-export async function getServerSideProps(context) {
-  let data = await fetch("http://localhost:3000/api/blogs");
-  let allBlogs = await data.json();
+export async function getStaticProps(context) {
+  let data = await fs.promises.readdir("./blogdata");
+  let myfile;
+  let allBlogs = [];
+  for (let i = 0; i < data.length; i++) {
+    const file = data[i];
+    myfile = await fs.promises.readFile(`./blogdata/${file}`, "utf8");
+    allBlogs.push(JSON.parse(myfile));
+  }
   return {
     props: { allBlogs }, // will be passed to the page component as props
   };

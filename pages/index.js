@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -26,7 +25,14 @@ export default function Home() {
           <span className="mySpan">Alpha Coder</span>
         </h1>
         <div className={styles.imagewrap}>
-          <Image
+          {/* <Image
+            className={styles.myImg}
+            src="/homeimg.jpg"
+            alt="home"
+            width={400}
+            height={200}
+          /> */}
+          <img
             className={styles.myImg}
             src="/homeimg.jpg"
             alt="home"
