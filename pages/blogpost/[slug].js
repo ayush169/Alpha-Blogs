@@ -5,6 +5,10 @@ import styles from "../../styles/BlogPost.module.css";
 import Axios from "axios";
 
 const Slug = (props) => {
+  function createMarkup(html) {
+    return { __html: html };
+  }
+
   const [blog, setBlog] = useState(props.myBlog);
   // useEffect(() => {
   //   if (!router.isReady) return;
@@ -24,7 +28,9 @@ const Slug = (props) => {
       <main className={styles.main}>
         <h1>{blog && blog.title}</h1>
         <hr />
-        <div>{blog && blog.content}</div>
+        {blog && (
+          <div dangerouslySetInnerHTML={createMarkup(blog.content)}></div>
+        )}
       </main>
     </div>
   );
