@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Axios from "axios";
 
 import styles from "../styles/Contact.module.css";
 
@@ -9,10 +8,10 @@ const Contact = () => {
   const [phone, setPhone] = useState("");
   const [desc, setDesc] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(name, email, phone, desc);
-    const data = { name, email, phone, desc };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(name, email, phone, desc);
+  //   const data = { name, email, phone, desc };
 
   //   Axios.post("http://localhost:3000/api/postcontact", {
   //     name,
