@@ -42,19 +42,13 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
-.title,
-.description {
+.title {
   text-align: center;
 }
 
-.description {
-
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
 
 .code {
   background: #fafafa;
@@ -128,9 +122,34 @@
 }
 
 .myImg{
-  border-radius: 10px;
+  width: 465px;
+  border-radius: 22px;
 }
 
 .imagewrap{
   padding: 30px 0;
+}
+
+.h2{
+  font-size: 2.5rem
+}
+
+.h3{
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 11px;
+}
+
+.btn{
+  color: white;
+  background: black;
+  padding: 7px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 9px;
+}
+
+.p{
+  margin: 16px 0;
+  margin-top: 3px;
 }

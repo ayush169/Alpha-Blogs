@@ -81,12 +81,13 @@ const Contact = () => {
           </label>
           <input
             type="text"
-            className="form-control"
+            className={styles.input}
             id="name"
             name="name"
             value={name}
             onChange={handleChange}
             aria-describedby="emailHelp"
+            required
           />
         </div>
         <div className={styles.mb3}>
@@ -95,14 +96,15 @@ const Contact = () => {
           </label>
           <input
             type="email"
-            className="form-control"
+            className={styles.input}
             id="email"
             name="email"
             value={email}
             onChange={handleChange}
             aria-describedby="emailHelp"
+            required
           />
-          <div id="emailHelp" className="form-text">
+          <div id="emailHelp" className={styles.formtext}>
             We will never share your email with anyone else.
           </div>
         </div>
@@ -112,26 +114,28 @@ const Contact = () => {
           </label>
           <input
             type="number"
-            className="form-control"
+            className={styles.input}
             id="phone"
             name="phone"
             value={phone}
             onChange={handleChange}
             aria-describedby="emailHelp"
+            required
           />
         </div>
         <div className={styles.mb3}>
-          <label htmlFor="floatingTextarea">Description</label>
+          <label htmlFor="floatingTextarea" className={styles.formlabel}>
+            Description
+          </label>
           <textarea
-            className="form-control"
-            placeholder="Write your concern here"
+            className={styles.input}
             id="desc"
             name="desc"
             value={desc}
             onChange={handleChange}
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className={styles.btn}>
           Submit
         </button>
       </form>
